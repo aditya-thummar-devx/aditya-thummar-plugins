@@ -9,7 +9,7 @@
     {
       "name": "non-tech-content",
       "source": "./plugins/non-tech-content",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Plain-language documentation writer — generates or rewrites any doc so a non-technical reader (exec, CEO, new joiner) can understand it. Project- and stack-agnostic.",
       "category": "workflow",
       "tags": ["documentation", "writing", "plain-language", "non-technical"]
@@ -17,7 +17,7 @@
     {
       "name": "check-appstore-details",
       "source": "./plugins/check-appstore-details",
-      "version": "0.1.0",
+      "version": "1.0.1",
       "description": "Audit an iOS app's App Store listing against its codebase before submission, fetching current Apple policy at run time and fixing each gap one page at a time. No App Store Connect credentials.",
       "category": "workflow",
       "tags": ["app-store", "app-review", "ios", "compliance", "privacy", "audit"]

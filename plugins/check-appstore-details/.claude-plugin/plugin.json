@@ -1,6 +1,6 @@
 {
   "name": "check-appstore-details",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Audit an iOS app's App Store listing against its own codebase before submission, then walk the user through fixing each problem one page at a time. Fetches current Apple policy at run time, needs no App Store Connect credentials, and verifies every fix before moving on.",
   "author": {
     "name": "Aditya Thummar"
