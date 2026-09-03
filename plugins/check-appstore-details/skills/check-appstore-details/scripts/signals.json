@@ -1,0 +1,200 @@
+{
+  "_comment": "Single source of truth for detection signals. scan-project.py reads this; references/signal-tables.md documents the method and points here. Adequacy test: removing any one entry must not change behaviour for one specific app only. If it does, the table is too narrow.",
+
+  "trackingSdks": {
+    "_note": "Packages that read an advertising identifier or send user-level events to an ad platform. Presence of any of these makes a 'no tracking' privacy-manifest declaration suspect.",
+    "idfa": [
+      "react-native-fbsdk-next", "react-native-fbsdk", "facebook-ios-sdk", "FBSDKCoreKit",
+      "react-native-google-mobile-ads", "google-mobile-ads", "admob", "Google-Mobile-Ads-SDK",
+      "react-native-appsflyer", "appsflyer", "AppsFlyerFramework",
+      "react-native-adjust", "adjust", "Adjust",
+      "react-native-branch", "branch-sdk", "Branch",
+      "react-native-idfa", "react-native-advertising-id", "react-native-tracking-transparency",
+      "singular-react-native", "react-native-kochava", "tenjin",
+      "com.google.android.gms.ads.identifier", "AdvertisingIdClient"
+    ],
+    "analytics": [
+      "@react-native-firebase/analytics", "firebase/analytics", "expo-firebase-analytics",
+      "@segment/analytics-react-native", "analytics-react-native",
+      "mixpanel-react-native", "react-native-mixpanel",
+      "@amplitude/analytics-react-native", "react-native-amplitude-analytics",
+      "clevertap-react-native", "react-native-clevertap",
+      "@amplitude/react-native", "posthog-react-native", "react-native-moengage",
+      "@rudderstack/rudder-sdk-react-native", "react-native-appcenter-analytics",
+      "@react-native-firebase/perf"
+    ],
+    "diagnostics": [
+      "@react-native-firebase/crashlytics", "firebase/crashlytics",
+      "@sentry/react-native", "sentry-expo", "bugsnag-react-native",
+      "@bugsnag/react-native", "react-native-exception-handler",
+      "appcenter-crashes", "react-native-appcenter-crashes", "instabug-reactnative"
+    ]
+  },
+
+  "paymentSdks": {
+    "_note": "Deliberately broad and multi-region. No single market is privileged.",
+    "global": [
+      "@stripe/stripe-react-native", "react-native-stripe", "tipsi-stripe",
+      "react-native-paypal", "@paypal/react-native", "braintree-web-drop-in",
+      "react-native-braintree", "react-native-adyen", "@adyen/react-native",
+      "react-native-square-in-app-payments", "@square/",
+      "react-native-checkout-com", "@checkout.com/", "react-native-worldpay",
+      "react-native-authorizenet", "react-native-2checkout",
+      "@react-native-google-pay/", "react-native-google-pay",
+      "react-native-apple-pay", "@rnw-community/react-native-payments",
+      "react-native-payments", "react-native-klarna", "react-native-affirm"
+    ],
+    "regional": [
+      "react-native-razorpay", "react-native-payu", "react-native-paytm",
+      "react-native-phonepe", "react-native-cashfree", "react-native-instamojo",
+      "react-native-ccavenue", "react-native-billdesk", "react-native-juspay",
+      "react-native-mercadopago", "@mercadopago/", "react-native-pagseguro",
+      "react-native-paystack", "react-native-flutterwave", "react-native-mpesa",
+      "react-native-iyzico", "react-native-midtrans", "react-native-xendit",
+      "react-native-alipay", "react-native-wechat-pay", "react-native-toss-payments",
+      "react-native-iamport", "react-native-vnpay", "react-native-omise",
+      "react-native-fawry", "react-native-tap-payments", "react-native-myfatoorah",
+      "react-native-yookassa", "react-native-tinkoff", "react-native-payme"
+    ],
+    "inAppPurchase": [
+      "react-native-iap", "expo-in-app-purchases", "react-native-purchases",
+      "@revenuecat/", "react-native-store-kit", "expo-store-review"
+    ]
+  },
+
+  "paymentUrlSchemes": {
+    "_note": "iOS LSApplicationQueriesSchemes entries that reveal a hand-off to a regional payment app. A cluster of these is strong evidence the app only transacts in one market.",
+    "in": ["paytmmp", "tez", "phonepe", "gpay", "upi", "bhim", "credpay", "cred", "amazonpay", "mobikwik", "freecharge", "ybl", "supermoney", "paytm"],
+    "cn": ["alipay", "alipays", "weixin", "wechat", "unionpay"],
+    "kr": ["kakaotalk", "tosspayments", "supertoss", "ispmobile", "kftc-bankpay"],
+    "id": ["gojek", "ovo", "dana", "shopeeid"],
+    "br": ["mercadopago", "picpay", "nubank"],
+    "global": ["paypal", "venmo", "cashapp", "revolut", "wise"]
+  },
+
+  "currencies": [
+    "AED", "ARS", "AUD", "BDT", "BRL", "CAD", "CHF", "CLP", "CNY", "COP",
+    "CZK", "DKK", "EGP", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR",
+    "JPY", "KES", "KRW", "LKR", "MAD", "MXN", "MYR", "NGN", "NOK", "NZD",
+    "PEN", "PHP", "PKR", "PLN", "QAR", "RON", "RUB", "SAR", "SEK", "SGD",
+    "THB", "TRY", "TWD", "UAH", "USD", "VND", "ZAR"
+  ],
+
+  "postalValidators": {
+    "_note": "Field names and regexes that pin the app to one country's address format.",
+    "fieldNames": ["pincode", "pinCode", "pin_code", "zipcode", "zipCode", "zip_code", "postcode", "postCode", "postalCode", "postal_code", "eircode", "cep"],
+    "regexHints": ["\\\\d{6}", "\\\\d{5}", "\\\\d{4}", "[A-Z]{1,2}\\\\d"]
+  },
+
+  "loginKinds": {
+    "_note": "How a reviewer would have to get past the login wall. otpSms is the dangerous one: a reviewer cannot receive an SMS.",
+    "otpSms": ["verifyOtp", "verifyOTP", "sendOtp", "sendOTP", "requestOtp", "resendOtp", "OtpVerification", "OTPVerification", "otp_verify", "EnterOtp", "smsCode", "verificationCode"],
+    "social": ["signInWithApple", "appleAuth", "@invertase/react-native-apple-authentication", "expo-apple-authentication", "@react-native-google-signin/google-signin", "GoogleSignin", "signInWithGoogle", "LoginManager", "signInWithFacebook", "expo-auth-session"],
+    "biometric": ["react-native-biometrics", "react-native-touch-id", "expo-local-authentication", "LocalAuthentication", "TouchID", "FaceID"],
+    "emailPassword": ["signInWithEmailAndPassword", "loginWithPassword", "emailLogin"]
+  },
+
+  "permissionUsage": {
+    "_note": "Maps an iOS usage-description key to the code that would actually exercise it. Split into strong and weak on purpose, because the two directions of the audit have opposite risk profiles.",
+    "_strongWeak": "STRONG = a package name or a distinctive platform API that means one thing only. WEAK = a generic hint that could plausibly mean something else. The 'declared but unused' direction searches strong+weak, because a hit there SUPPRESSES a finding and being permissive is the conservative choice. The 'used but undeclared' direction searches strong ONLY, because a hit there CREATES a BLOCKER and a false positive is far more damaging than a miss. This asymmetry exists because a bare 'startScan' needle once produced two BLOCKER findings against a QR-code handler called startScanFromSheet.",
+
+    "NSCameraUsageDescription": {
+      "strong": ["react-native-vision-camera", "expo-camera", "react-native-camera", "launchCamera", "openCamera", "useCameraDevice", "requestCameraPermission", "AVCaptureDevice"],
+      "weak": ["Camera", "takePhoto", "mediaDevices", "qrcode", "barcode"]
+    },
+    "NSPhotoLibraryUsageDescription": {
+      "strong": ["react-native-image-picker", "expo-image-picker", "react-native-image-crop-picker", "launchImageLibrary", "openPicker", "CameraRoll", "PHPhotoLibrary", "launchLibrary"],
+      "weak": ["pickImage", "gallery", "PhotoLibrary", "photoPicker"]
+    },
+    "NSPhotoLibraryAddUsageDescription": {
+      "strong": ["@react-native-camera-roll/camera-roll", "saveToCameraRoll", "saveToLibraryAsync", "CameraRoll"],
+      "weak": ["saveImage", "downloadImage", "saveToGallery"]
+    },
+    "NSMicrophoneUsageDescription": {
+      "strong": ["expo-av", "react-native-audio-recorder-player", "react-native-audio-record", "@react-native-voice/voice", "AudioRecorder", "AVAudioRecorder", "startRecording"],
+      "weak": ["Microphone", "audio", "record"]
+    },
+    "NSLocationWhenInUseUsageDescription": {
+      "strong": ["@react-native-community/geolocation", "react-native-geolocation-service", "expo-location", "getCurrentPosition", "requestWhenInUseAuthorization", "requestForegroundPermissionsAsync", "getCurrentPositionAsync", "watchPosition"],
+      "weak": ["Geolocation", "coords", "latitude", "longitude"]
+    },
+    "NSLocationAlwaysAndWhenInUseUsageDescription": {
+      "strong": ["requestAlwaysAuthorization", "startMonitoringSignificantLocationChanges", "startGeofencing", "requestBackgroundPermissionsAsync", "startLocationUpdatesAsync", "react-native-background-geolocation"],
+      "weak": ["authorizationLevel", "backgroundLocation", "significantChanges"]
+    },
+    "NSLocationAlwaysUsageDescription": {
+      "strong": ["requestAlwaysAuthorization", "startMonitoringSignificantLocationChanges", "requestBackgroundPermissionsAsync", "react-native-background-geolocation"],
+      "weak": ["authorizationLevel", "backgroundLocation"]
+    },
+    "NSUserTrackingUsageDescription": {
+      "strong": ["react-native-tracking-transparency", "expo-tracking-transparency", "requestTrackingPermission", "requestTrackingPermissionsAsync", "getTrackingStatus", "setAdvertiserTrackingEnabled", "ATTrackingManager"],
+      "weak": ["AppTrackingTransparency", "idfa", "advertisingId"]
+    },
+    "NSCalendarsUsageDescription": {
+      "strong": ["expo-calendar", "react-native-calendar-events", "RNCalendarEvents", "createEventAsync", "saveEvent", "EKEventStore"],
+      "weak": ["calendar", "addEvent", "addToCalendar"]
+    },
+    "NSCalendarsWriteOnlyAccessUsageDescription": {
+      "strong": ["expo-calendar", "react-native-calendar-events", "RNCalendarEvents", "createEventAsync", "saveEvent", "EKEventStore"],
+      "weak": ["calendar", "addEvent", "addToCalendar"]
+    },
+    "NSCalendarsFullAccessUsageDescription": {
+      "strong": ["fetchAllEvents", "getEventsAsync", "findEvents", "enumerateEvents"],
+      "weak": ["readEvents", "listEvents", "calendar"]
+    },
+    "NSRemindersUsageDescription": {
+      "strong": ["EKReminder", "getRemindersAsync", "createReminderAsync"],
+      "weak": ["reminder"]
+    },
+    "NSContactsUsageDescription": {
+      "strong": ["expo-contacts", "react-native-contacts", "getAllContacts", "getContactsAsync", "CNContactStore"],
+      "weak": ["contacts", "addressBook"]
+    },
+    "NSFaceIDUsageDescription": {
+      "strong": ["react-native-biometrics", "expo-local-authentication", "react-native-touch-id", "simplePrompt", "authenticateAsync", "LAContext"],
+      "weak": ["TouchID", "FaceID", "biometric", "biometrics"]
+    },
+    "NSMotionUsageDescription": {
+      "strong": ["expo-sensors", "react-native-sensors", "CMMotionManager", "Pedometer", "DeviceMotion"],
+      "weak": ["Accelerometer", "Gyroscope", "motion", "stepCount"]
+    },
+    "NSBluetoothAlwaysUsageDescription": {
+      "strong": ["react-native-ble-plx", "react-native-ble-manager", "BleManager", "BleClient", "expo-bluetooth", "CBCentralManager"],
+      "weak": ["bluetooth", "peripheral", "gatt"]
+    },
+    "NSBluetoothPeripheralUsageDescription": {
+      "strong": ["react-native-ble-plx", "react-native-ble-manager", "BleManager", "CBPeripheralManager", "expo-bluetooth"],
+      "weak": ["bluetooth", "peripheral", "advertising"]
+    },
+    "NSSpeechRecognitionUsageDescription": {
+      "strong": ["SFSpeechRecognizer", "@react-native-voice/voice", "expo-speech-recognition"],
+      "weak": ["speechRecognition", "transcribe"]
+    },
+    "NSHealthShareUsageDescription": {
+      "strong": ["react-native-health", "react-native-google-fit", "HKHealthStore", "expo-health"],
+      "weak": ["healthkit", "healthData"]
+    },
+    "NSHealthUpdateUsageDescription": {
+      "strong": ["react-native-health", "saveQuantitySample", "HKHealthStore"],
+      "weak": ["healthkit", "writeHealth"]
+    },
+    "NSAppleMusicUsageDescription": {
+      "strong": ["MPMediaLibrary", "MusicKit", "react-native-music-library"],
+      "weak": ["appleMusic", "mediaLibrary"]
+    },
+    "NSSiriUsageDescription": {
+      "strong": ["INIntent", "INVoiceShortcut", "SiriKit"],
+      "weak": ["siri", "shortcut"]
+    },
+    "NSLocalNetworkUsageDescription": {
+      "strong": ["react-native-zeroconf", "NSNetServiceBrowser", "NWBrowser"],
+      "weak": ["bonjour", "mdns", "localNetwork"]
+    }
+  },
+
+  "frameworkMarkers": {
+    "_note": "Framework detection is dependency-driven, never file-presence-driven. app.json exists in bare React Native too, so its presence proves nothing on its own.",
+    "verified": ["react-native", "expo"],
+    "unverified": ["flutter", "capacitor", "native-ios", "unity"]
+  }
+}
