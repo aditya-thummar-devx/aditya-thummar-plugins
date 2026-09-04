@@ -21,6 +21,14 @@
       "description": "Audit an iOS app's App Store listing against its codebase before submission, fetching current Apple policy at run time and fixing each gap one page at a time. No App Store Connect credentials.",
       "category": "workflow",
       "tags": ["app-store", "app-review", "ios", "compliance", "privacy", "audit"]
+    },
+    {
+      "name": "prepare-handover-docs",
+      "source": "./plugins/prepare-handover-docs",
+      "version": "1.0.0",
+      "description": "Build a client-handover Google Doc for a mobile app — one native tab per area (env, Firebase, App Store, Play Store, release & rollback, overview). Detects the current project and fills each tab from the repo plus a few things only you know, one step at a time, confirming before each write. React Native and Expo. No secret values in the doc.",
+      "category": "workflow",
+      "tags": ["handover", "documentation", "mobile", "react-native", "expo", "google-docs"]
     }
   ]
 }
