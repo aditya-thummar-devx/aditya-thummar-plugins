@@ -1,0 +1,21 @@
+{
+  "name": "prepare-handover-docs",
+  "version": "1.0.0",
+  "description": "Build a client-handover Google Doc for a mobile app — one native tab per area (env, Firebase, App Store, Play Store, release & rollback, overview). Detects the current project and fills every tab from the repo plus a few things only you know, one step at a time, confirming before each write. React Native (default) and Expo (the -expo skill). No secret values ever enter the doc.",
+  "author": {
+    "name": "Aditya Thummar"
+  },
+  "license": "MIT",
+  "keywords": [
+    "handover",
+    "documentation",
+    "mobile",
+    "react-native",
+    "expo",
+    "google-docs",
+    "release",
+    "signing",
+    "app-store",
+    "play-store"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "update-docs",
+  "version": "0.1.0",
+  "description": "Analyze any project's structure and build (or restructure, or gap-fill) an audience-split documentation tree — written from the code, stamped with checkable front-matter, and verified for broken links, one approval-gated section at a time. Stack-adaptive (mobile / web / backend / library / CLI / monorepo). Proposes the tree first and stops for your approval, then previews each step before doing it and hands each one back for you to verify.",
+  "author": {
+    "name": "Aditya Thummar"
+  },
+  "license": "MIT",
+  "keywords": [
+    "documentation",
+    "docs",
+    "architecture",
+    "audit",
+    "generic",
+    "structure",
+    "codebase",
+    "onboarding"
+  ]
+}
