@@ -29,6 +29,14 @@
       "description": "Build a client-handover Google Doc for a mobile app — one native tab per area (env, Firebase, App Store, Play Store, release & rollback, overview). Detects the current project and fills each tab from the repo plus a few things only you know, one step at a time, confirming before each write. React Native and Expo. No secret values in the doc.",
       "category": "workflow",
       "tags": ["handover", "documentation", "mobile", "react-native", "expo", "google-docs"]
+    },
+    {
+      "name": "update-docs",
+      "source": "./plugins/update-docs",
+      "version": "0.1.0",
+      "description": "Analyze any project and build, restructure, or gap-fill its documentation as an audience-split tree written from the code — proposing the tree first, then working one approval-gated section at a time. Stack-adaptive (mobile / web / backend / library / CLI / monorepo). Stamps checkable front-matter, links to the canonical rule file instead of restating it, moves docs with git mv, and verifies links before each hand-back.",
+      "category": "workflow",
+      "tags": ["documentation", "docs", "architecture", "audit", "generic", "structure"]
     }
   ]
 }
