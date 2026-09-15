@@ -37,6 +37,14 @@
       "description": "Analyze any project and build, restructure, or gap-fill its documentation as an audience-split tree written from the code — proposing the tree first, then working one approval-gated section at a time. Stack-adaptive (mobile / web / backend / library / CLI / monorepo). Stamps checkable front-matter, links to the canonical rule file instead of restating it, moves docs with git mv, and verifies links before each hand-back.",
       "category": "workflow",
       "tags": ["documentation", "docs", "architecture", "audit", "generic", "structure"]
+    },
+    {
+      "name": "init-mcp-disable",
+      "source": "./plugins/init-mcp-disable",
+      "version": "1.0.0",
+      "description": "List the claude.ai MCP connectors loaded in the current project and turn off the ones you don't want — for that project only. Writes the same config key the /mcp disable slash command writes, one connector at a time, backing up your config first, and can remember a keep-list so the next project is confirm-and-go.",
+      "category": "workflow",
+      "tags": ["mcp", "connectors", "context", "config", "cleanup"]
     }
   ]
 }

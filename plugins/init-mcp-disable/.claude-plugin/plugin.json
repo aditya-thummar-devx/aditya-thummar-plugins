@@ -1,0 +1,17 @@
+{
+  "name": "init-mcp-disable",
+  "version": "1.0.0",
+  "description": "List the claude.ai MCP connectors loaded in the current project and turn off the ones you don't want — for that project only. Writes the same config key the /mcp disable slash command writes, one connector at a time, and can remember a keep-list so the next project is confirm-and-go.",
+  "author": {
+    "name": "Aditya Thummar"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "connectors",
+    "context",
+    "tokens",
+    "project-config",
+    "cleanup"
+  ]
+}
